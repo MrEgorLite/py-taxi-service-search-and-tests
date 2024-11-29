@@ -59,7 +59,7 @@ class TestAdminRequired(TestCase):
         res = self.client.get(url)
         self.assertEqual(res.status_code, 302)
 
-    def with_login(self):
+    def test_with_login(self):
         self.client.force_login(self.admin_user)
         url = reverse("taxi:index")
         res = self.client.get(url)
